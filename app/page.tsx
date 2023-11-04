@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
 
 function PostCard(post: Post) {
   return (
@@ -18,10 +19,7 @@ function PostCard(post: Post) {
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
-      <div
-        className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      />
+      <p>{post.description}</p>
     </div>
   );
 }
