@@ -1,29 +1,7 @@
-import Image from "next/image";
-
-import Link from "next/link";
-import { compareDesc, format, parseISO } from "date-fns";
-import { allPosts, Post } from "contentlayer/generated";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { compareDesc } from "date-fns";
+import { allPosts } from "contentlayer/generated";
 import Card from "@/component/Card";
-
-function PostCard(post: Post) {
-  return (
-    <div className="mb-8">
-      <h2 className="mb-1 text-xl">
-        <Link
-          href={post.url}
-          className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
-        >
-          {post.title}
-        </Link>
-      </h2>
-      <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
-        {format(parseISO(post.date), "LLLL d, yyyy")}
-      </time>
-      <p>{post.description}</p>
-    </div>
-  );
-}
+import Header from "@/component/Header";
 
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
@@ -31,14 +9,17 @@ export default function Home() {
   );
 
   return (
-    <div className="mx-auto max-w-xl py-8">
-      <h1 className="mb-8 text-center text-2xl font-black">
-        Hippo's Blog
-      </h1>
-      {posts.map((post, idx) => (
-        // <PostCard key={idx} {...post} />
-        <Card key={idx} {...post}/>
-      ))}
-    </div>
+    <>
+      <Header />
+      <div className="mx-auto max-w-xs xl:max-w-xl sm:max-w-sm py-8">
+        <h1 className="mb-8 text-center text-2xl font-black">林荷馬的部落格</h1>
+        {posts.map((post, idx) => (
+          // <PostCard key={idx} {...post} />
+          <>
+            <Card key={idx} {...post} />
+          </>
+        ))}
+      </div>
+    </>
   );
 }
