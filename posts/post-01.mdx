@@ -2,11 +2,86 @@
 title: Readme
 date: 2021-12-24
 description: Readme desc
+author: LinHeMa
 ---
 ```js
 const a = 1;
+for (let i = 0; i < array.length; i +=1){
+    console.log('i',i)
+}
 ```
 
+## Some post with code!
+
+Some other posts! with `some inline code`!
+
+    ```js showLineNumbers
+    const a = 1;
+    a = 2;
+    ```
+
+    ```tsx showLineNumbers {5,15-17}
+    import "@/styles/globals.css";
+
+    import type { AppProps } from "next/app";
+    import Head from "next/head";
+    import { ThemeProvider } from "next-themes";
+
+    import LayoutWrapper from "@/components/LayoutWrapper";
+
+    function MyApp({ Component, pageProps }: AppProps) {
+      return (
+        <ThemeProvider attribute="class">
+          <Head>
+            <meta name="viewport" content="viewport-fit=cover" />
+          </Head>
+          <LayoutWrapper>
+            <Component {...pageProps} />
+          </LayoutWrapper>
+        </ThemeProvider>
+      );
+    }
+
+    export default MyApp;
+    ```
+
+    ```diff-js showLineNumbers {3-4}
+    const a = 1;
+    - a = 2;
+    + a = 2;
+    a = 3;
+    ```
+
+    ```shell
+    $ echo "Hello world!"
+    ```
+
+    ```python
+    print("Hello world!")
+    ```
+
+    ```java
+    System.out.println("Hello world!");
+    ```
+
+    ```csharp
+    Console.WriteLine("Hello world!");
+    ```
+
+    ```c
+    printf("Hello world!");
+    ```
+
+    ```cpp
+    std::cout << "Hello world!";
+    ```
+
+    ```go
+    fmt.Println("Hello world!")
+    ```
+this is body
+**bold**
+*italic*
 
 ## test h2
 # h1

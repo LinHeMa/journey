@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./component/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -11,11 +12,11 @@ const config: Config = {
       typography: ({ theme }) => ({
         pink: {
           css: {
-            "--tw-prose-body": theme("colors.pink[800]"),
-            "--tw-prose-headings": theme("colors.pink[900]"),
+            "--tw-prose-body": theme("colors.teal[300]"),
+            "--tw-prose-headings": theme("colors.teal[400]"),
             "--tw-prose-lead": theme("colors.pink[700]"),
             "--tw-prose-links": theme("colors.pink[900]"),
-            "--tw-prose-bold": theme("colors.pink[900]"),
+            "--tw-prose-bold": theme("colors.emerald[500]"),
             "--tw-prose-counters": theme("colors.pink[600]"),
             "--tw-prose-bullets": theme("colors.pink[400]"),
             "--tw-prose-hr": theme("colors.pink[300]"),
