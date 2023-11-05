@@ -9,6 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // @ts-ignore
       typography: ({ theme }) => ({
         pink: {
           css: {
